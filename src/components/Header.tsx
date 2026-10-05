@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
+const logoSrc = new URL('../../asset/logo_fitmeal.svg', import.meta.url).href;
+
 interface HeaderProps {
   onOrderClick: () => void;
 }
@@ -36,11 +38,12 @@ export default function Header({ onOrderClick }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <a href="#top-nav" className="flex items-center gap-2" aria-label="FitMeal home">
+            <img src={logoSrc} alt="" className="h-10 w-auto" />
             <span className="font-display text-2xl font-bold text-emerald-700 tracking-tight">
               Fit<span className="text-emerald-500">Meal</span>
             </span>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">

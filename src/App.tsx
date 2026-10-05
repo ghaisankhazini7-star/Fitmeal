@@ -12,6 +12,8 @@ import { PackagePlan } from './types';
 import { Globe, Mail, Phone, ArrowUp } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
+const logoSrc = new URL('../asset/logo_fitmeal.svg', import.meta.url).href;
+
 export default function App() {
   const [selectedPlan, setSelectedPlan] = useState<PackagePlan | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -96,9 +98,12 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
             {/* Branding Column */}
             <div className="md:col-span-5 space-y-6">
-              <span className="text-display text-2xl font-extrabold text-emerald-700 tracking-tight">
+              <div className="flex items-center gap-2">
+                <img src={logoSrc} alt="" className="h-10 w-auto" />
+                <span className="text-display text-2xl font-extrabold text-emerald-700 tracking-tight">
                 Fit<span className="text-emerald-500">Meal</span>
-              </span>
+                </span>
+              </div>
               <p className="font-sans text-sm text-slate-500 leading-relaxed max-w-sm">
                 The leading healthy meal prep delivery service in the city. Committed to fresh ingredients and expert nutrition.
               </p>
